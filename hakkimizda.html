@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda | BEES Lojistik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #030e1e;
+            --yellow: #f5b700;
+            --text-dark: #333333;
+            --text-muted: #64748b;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f8fafc; color: var(--text-dark); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* HEADER */
+        header {
+            background-color: var(--dark-blue);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-area img { height: 50px; width: auto; display: block; }
+        nav ul { display: flex; gap: 20px; }
+        nav ul li a { color: rgba(255, 255, 255, 0.8); font-size: 12px; font-weight: 600; text-transform: uppercase; }
+        nav ul li a:hover, nav ul li a.active { color: var(--yellow); }
+        .teklif-btn { background-color: var(--yellow); color: var(--dark-blue); padding: 8px 18px; border-radius: 4px; font-weight: 700; font-size: 12px; display: flex; align-items: center; gap: 6px; }
+
+        /* İÇERİK ALANI */
+        .page-header {
+            background: linear-gradient(rgba(3, 14, 30, 0.8), rgba(3, 14, 30, 0.9)), url('assets/img/hero-truck.jpg') no-repeat center center/cover;
+            padding: 60px 5%;
+            color: var(--white);
+            text-align: center;
+        }
+        .page-header h1 { font-size: 32px; font-family: 'Montserrat', sans-serif; }
+
+        .about-container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .about-text-block { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .about-text-block h2 { color: var(--dark-blue); margin-bottom: 20px; font-size: 24px; border-left: 4px solid var(--yellow); padding-left: 15px; }
+        .about-text-block p { color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-bottom: 15px; }
+
+        .vision-mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+        .grid-card { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 4px solid var(--dark-blue); }
+        .grid-card.vm-yellow { border-top-color: var(--yellow); }
+        .grid-card h3 { color: var(--dark-blue); margin-bottom: 15px; font-size: 20px; display: flex; align-items: center; gap: 10px; }
+        .grid-card i { color: var(--yellow); }
+        .grid-card p { color: var(--text-muted); font-size: 14px; line-height: 1.7; }
+
+        .values-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .value-item { background: #fff; padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #edf2f7; }
+        .value-item i { font-size: 24px; color: var(--dark-blue); margin-bottom: 10px; }
+        .value-item h4 { color: var(--dark-blue); margin-bottom: 8px; }
+        .value-item p { color: var(--text-muted); font-size: 13px; line-height: 1.5; }
+
+        /* FOOTER */
+        footer { background-color: var(--dark-blue); color: var(--white); padding: 30px 5%; text-align: center; margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area"><img src="assets/img/logo.png" alt="BEES LOJİSTİK LOGO"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">ANASAYFA</a></li>
+                <li><a href="hakkimizda.html" class="active">HAKKIMIZDA</a></li>
+                <li><a href="#">HİZMETLERİMİZ</a></li>
+                <li><a href="#">NEDEN BEES?</a></li>
+                <li><a href="#">REFERANSLAR</a></li>
+                <li><a href="#">İLETİŞİM</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="teklif-btn"><i class="fa-regular fa-file-lines"></i> TEKLİF AL</a>
+    </header>
+
+    <section class="page-header">
+        <h1>Kurumsal</h1>
+    </section>
+
+    <div class="about-container">
+        <!-- Hikayemiz -->
+        <div class="about-text-block">
+            <h2>Hikayemiz</h2>
+            <p>Sektördeki köklü deneyimimizle, uluslararası taşımacılık ve dış ticaret süreçlerinde müşterilerimize değer katmak amacıyla kurulduk. Genç, dinamik ve arı gibi çalışan kadromuzla lojistiğin her aşamasında sürdürülebilir çözümler sunuyoruz.</p>
+        </div>
+
+        <!-- Vizyon & Misyon -->
+        <div class="vision-mission-grid">
+            <div class="grid-card">
+                <h3><i class="fa-solid fa-bullseye"></i> Misyonumuz</h3>
+                <p>Müşterilerimizin yüklerini en güvenli, en hızlı ve en ekonomik şekilde hedefe ulaştırarak, küresel pazardaki rekabet güçlerini artırmak.</p>
+            </div>
+            <div class="grid-card vm-yellow">
+                <h3><i class="fa-solid fa-eye"></i> Vizyonumuz</h3>
+                <p>Teknoloji ve lojistik entegrasyonunu en üst düzeyde kullanarak, Avrupa ve Türkiye arasında ilk akla gelen, en güvenilir lojistik markası olmak.</p>
+            </div>
+        </div>
+
+        <!-- Değerlerimiz -->
+        <div class="about-text-block">
+            <h2>Kurumsal Değerlerimiz</h2>
+            <div class="values-list">
+                <div class="value-item">
+                    <i class="fa-solid fa-handshake"></i>
+                    <h4>Dürüstlük & Şeffaflık</h4>
+                    <p>Müşterilerimize yüklerinin durumu hakkında her an doğru ve şeffaf bilgi akışı sağlarız.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fa-regular fa-clock"></i>
+                    <h4>Zaman Yönetimi</h4>
+                    <p>Planlanan takvime sadık kalarak teslimat süreçlerini tam zamanında yönetiriz.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <h4>Güven ve Sorumluluk</h4>
+                    <p>Bize emanet edilen her yükü kendi varlığımız gibi korur, yasal güvence altında taşırız.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>&copy; 2026 BEES LOJİSTİK. Tüm hakları saklıdır.</div>
+    </footer>
+
+</body>
+</html>
