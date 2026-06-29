@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neden BEES? | BEES Lojistik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #030e1e;
+            --yellow: #f5b700;
+            --text-dark: #333333;
+            --text-muted: #64748b;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f8fafc; color: var(--text-dark); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* HEADER */
+        header {
+            background-color: var(--dark-blue);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-area img { height: 50px; width: auto; display: block; }
+        nav ul { display: flex; gap: 20px; }
+        nav ul li a { color: rgba(255, 255, 255, 0.8); font-size: 12px; font-weight: 600; text-transform: uppercase; }
+        nav ul li a:hover, nav ul li a.active { color: var(--yellow); }
+        .teklif-btn { background-color: var(--yellow); color: var(--dark-blue); padding: 8px 18px; border-radius: 4px; font-weight: 700; font-size: 12px; display: flex; align-items: center; gap: 6px; }
+
+        /* BAŞLIK ALANI */
+        .page-header {
+            background: linear-gradient(rgba(3, 14, 30, 0.8), rgba(3, 14, 30, 0.9)), url('hero-truck.jpg') no-repeat center center/cover;
+            padding: 60px 5%;
+            color: var(--white);
+            text-align: center;
+        }
+        .page-header h1 { font-size: 32px; font-family: 'Montserrat', sans-serif; }
+
+        /* İÇERİK */
+        .why-container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .why-intro { text-align: center; max-width: 700px; margin: 0 auto 50px auto; }
+        .why-intro h2 { color: var(--dark-blue); font-size: 26px; margin-bottom: 15px; }
+        .why-intro p { color: var(--text-muted); font-size: 15px; line-height: 1.7; }
+
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .why-card { background: var(--white); padding: 35px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); text-align: center; border-bottom: 3px solid transparent; transition: 0.3s; }
+        .why-card:hover { transform: translateY(-5px); border-bottom-color: var(--yellow); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+        
+        .why-icon { width: 70px; height: 70px; background: rgba(245, 183, 0, 0.1); color: var(--dark-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 20px auto; transition: 0.3s; }
+        .why-card:hover .why-icon { background: var(--yellow); color: var(--dark-blue); }
+        
+        .why-card h3 { color: var(--dark-blue); font-size: 18px; margin-bottom: 12px; }
+        .why-card p { color: var(--text-muted); font-size: 13px; line-height: 1.6; }
+
+        /* FOOTER */
+        footer { background-color: var(--dark-blue); color: var(--white); padding: 30px 5%; text-align: center; margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area"><img src="Logo.png" alt="BEES LOJİSTİK LOGO"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">ANASAYFA</a></li>
+                <li><a href="hakkimizda.html">HAKKIMIZDA</a></li>
+                <li><a href="hizmetlerimiz.html">HİZMETLERİMİZ</a></li>
+                <li><a href="neden-bees.html" class="active">NEDEN BEES?</a></li>
+                <li><a href="#">REFERANSLAR</a></li>
+                <li><a href="#">İLETİŞİM</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="teklif-btn"><i class="fa-regular fa-file-lines"></i> TEKLİF AL</a>
+    </header>
+
+    <section class="page-header">
+        <h1>Neden BEES Lojistik?</h1>
+    </section>
+
+    <div class="why-container">
+        <div class="why-intro">
+            <h2>Yükünüzü Neden Bize Emanet Etmelisiniz?</h2>
+            <p>Uluslararası taşımacılık zincirinde her halkayı büyük bir titizlikle yönetiyor, operasyonlarımızı söz verdiğimiz standartlarda tamamlıyoruz.</p>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                <h3>Arı Gibi Çalışkan ve Programlı</h3>
+                <p>İsmimizden aldığımız ilhamla, tüm operasyon süreçlerimizi bir arı kovanı disipliniyle, sıfır hata ve maksimum koordinasyonla yönetiyoruz.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon"><i class="fa-solid fa-sliders"></i></div>
+                <h3>Butik ve Esnek Çözümler</h3>
+                <p>Her müşterinin lojistik ihtiyacı farklıdır. Standart kalıplar yerine, firmanıza, rotanıza ve bütçenize en uygun taşıma modelini tasarlıyoruz.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+                <h3>7/24 Şeffaf Bilgi Akışı</h3>
+                <p>Yükünüz yoldayken hiçbir soru işaretiyle karşılaşmazsınız. Operasyon ekibimiz, sürecin her anında size şeffaf ve anlık konum/durum bilgisi sağlar.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon"><i class="fa-solid fa-file-shield"></i></div>
+                <h3>Uluslararası Güvence</h3>
+                <p>Tüm taşımalarımız uluslararası CMR sigortası ve taşımacılık mevzuatlarına tam uyumlu olarak, yasal güvence altında gerçekleştirilir.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>&copy; 2026 BEES LOJİSTİK. Tüm hakları saklıdır.</div>
+    </footer>
+
+</body>
+</html>
