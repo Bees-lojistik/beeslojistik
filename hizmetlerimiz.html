@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetlerimiz | BEES Lojistik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #030e1e;
+            --yellow: #f5b700;
+            --text-dark: #333333;
+            --text-muted: #64748b;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f8fafc; color: var(--text-dark); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* HEADER */
+        header {
+            background-color: var(--dark-blue);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-area img { height: 50px; width: auto; display: block; }
+        nav ul { display: flex; gap: 20px; }
+        nav ul li a { color: rgba(255, 255, 255, 0.8); font-size: 12px; font-weight: 600; text-transform: uppercase; }
+        nav ul li a:hover, nav ul li a.active { color: var(--yellow); }
+        .teklif-btn { background-color: var(--yellow); color: var(--dark-blue); padding: 8px 18px; border-radius: 4px; font-weight: 700; font-size: 12px; display: flex; align-items: center; gap: 6px; }
+
+        /* BOSHEDER */
+        .page-header {
+            background: linear-gradient(rgba(3, 14, 30, 0.8), rgba(3, 14, 30, 0.9)), url('assets/img/hero-truck.jpg') no-repeat center center/cover;
+            padding: 60px 5%;
+            color: var(--white);
+            text-align: center;
+        }
+        .page-header h1 { font-size: 32px; font-family: 'Montserrat', sans-serif; }
+
+        /* HİZMET DETAYLARI */
+        .services-container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .service-detailed-card { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px; display: flex; gap: 30px; align-items: center; border-left: 5px solid var(--dark-blue); }
+        .service-detailed-card.sc-yellow { border-left-color: var(--yellow); }
+        
+        .service-detailed-icon { font-size: 45px; color: var(--dark-blue); min-width: 70px; text-align: center; }
+        .service-detailed-card.sc-yellow .service-detailed-icon { color: var(--yellow); }
+        
+        .service-detailed-text h2 { color: var(--dark-blue); margin-bottom: 12px; font-size: 22px; }
+        .service-detailed-text p { color: var(--text-muted); font-size: 14px; line-height: 1.7; }
+
+        /* FOOTER */
+        footer { background-color: var(--dark-blue); color: var(--white); padding: 30px 5%; text-align: center; margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area"><img src="assets/img/logo.png" alt="BEES LOJİSTİK LOGO"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">ANASAYFA</a></li>
+                <li><a href="hakkimizda.html">HAKKIMIZDA</a></li>
+                <li><a href="hizmetlerimiz.html" class="active">HİZMETLERİMİZ</a></li>
+                <li><a href="#">NEDEN BEES?</a></li>
+                <li><a href="#">REFERANSLAR</a></li>
+                <li><a href="#">İLETİŞİM</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="teklif-btn"><i class="fa-regular fa-file-lines"></i> TEKLİF AL</a>
+    </header>
+
+    <section class="page-header">
+        <h1>Hizmetlerimiz</h1>
+    </section>
+
+    <div class="services-container">
+        
+        <!-- 1. Uluslararası Karayolu -->
+        <div class="service-detailed-card">
+            <div class="service-detailed-icon"><i class="fa-solid fa-truck-moving"></i></div>
+            <div class="service-detailed-text">
+                <h2>Uluslararası Karayolu Taşımacılığı</h2>
+                <p>Türkiye, Avrupa ve Orta Doğu hattında komple (FTL) ve parsiyel (LTL) yük taşımacılığı. (Özellikle İspanya, Portekiz, Fransa vb.) Geniş ve modern araç filomuzla güvenli teslimat.</p>
+            </div>
+        </div>
+
+        <!-- 2. Parsiyel -->
+        <div class="service-detailed-card sc-yellow">
+            <div class="service-detailed-icon"><i class="fa-solid fa-cubes"></i></div>
+            <div class="service-detailed-text">
+                <h2>Parsiyel (LTL) Taşımacılık</h2>
+                <p>Küçük ölçekli gönderileriniz için maliyetleri düşüren, haftalık düzenli çıkışlarla zamanında teslimat sağlayan esnek parsiyel çözümleri.</p>
+            </div>
+        </div>
+
+        <!-- 3. Dış Ticaret -->
+        <div class="service-detailed-card">
+            <div class="service-detailed-icon"><i class="fa-solid fa-globe"></i></div>
+            <div class="service-detailed-text">
+                <h2>Dış Ticaret Danışmanlığı</h2>
+                <p>İthalat ve ihracat mevzuatlarına tam uyum, gümrükleme süreç yönetimi ve uluslararası lojistik hukuku konularında profesyonel rehberlik.</p>
+            </div>
+        </div>
+
+        <!-- 4. Turizm -->
+        <div class="service-detailed-card sc-yellow">
+            <div class="service-detailed-icon"><i class="fa-solid fa-bus"></i></div>
+            <div class="service-detailed-text">
+                <h2>Turizm ve VIP Taşımacılık</h2>
+                <p>Şirket organizasyonları, personel taşımacılığı ve kurumsal turizm ihtiyaçlarına özel, konforlu ve güvenli filo çözümleri.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div>&copy; 2026 BEES LOJİSTİK. Tüm hakları saklıdır.</div>
+    </footer>
+
+</body>
+</html>
