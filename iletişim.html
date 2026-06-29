@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | BEES Lojistik</title>
+    <link href="https://google.com/maps/place/Bees+Uluslararası+Nakliyat+Turizm+ve+Dış+Ticaret+Ltd.+Şti./@41.0246477,29.1041687,15z/data=!4m6!3m5!1s0x14cac9a3c4632013:0x8cbca65eafb74b5b!8m2!3d41.0139289!4d29.1029649!16s%2Fg%2F11nnqh__bg?hl=tr-TR&entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #030e1e;
+            --yellow: #f5b700;
+            --text-dark: #333333;
+            --text-muted: #64748b;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f8fafc; color: var(--text-dark); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* HEADER */
+        header {
+            background-color: var(--dark-blue);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-area img { height: 50px; width: auto; display: block; }
+        nav ul { display: flex; gap: 20px; }
+        nav ul li a { color: rgba(255, 255, 255, 0.8); font-size: 12px; font-weight: 600; text-transform: uppercase; }
+        nav ul li a:hover, nav ul li a.active { color: var(--yellow); }
+        .teklif-btn { background-color: var(--yellow); color: var(--dark-blue); padding: 8px 18px; border-radius: 4px; font-weight: 700; font-size: 12px; display: flex; align-items: center; gap: 6px; }
+
+        /* BAŞLIK ALANI */
+        .page-header {
+            background: linear-gradient(rgba(3, 14, 30, 0.8), rgba(3, 14, 30, 0.9)), url('hero-truck.jpg') no-repeat center center/cover;
+            padding: 60px 5%;
+            color: var(--white);
+            text-align: center;
+        }
+        .page-header h1 { font-size: 32px; font-family: 'Montserrat', sans-serif; }
+
+        /* İLETİŞİM İÇERİK */
+        .contact-container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; }
+        
+        /* SOL KOLON - BİLGİLER */
+        .contact-info-side h2 { color: var(--dark-blue); font-size: 24px; margin-bottom: 15px; }
+        .contact-info-side > p { color: var(--text-muted); font-size: 14px; margin-bottom: 30px; line-height: 1.6; }
+        
+        .contact-methods { display: flex; flex-direction: column; gap: 20px; }
+        .method-box { background: var(--white); padding: 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); display: flex; align-items: center; gap: 20px; border: 1px solid #edf2f7; }
+        .method-icon { width: 50px; height: 50px; background: rgba(3, 14, 30, 0.05); color: var(--dark-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .method-details h3 { font-size: 15px; color: var(--dark-blue); margin-bottom: 4px; }
+        .method-details p { font-size: 13px; color: var(--text-muted); }
+
+        /* SAĞ KOLON - FORM */
+        .contact-form-side { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid #edf2f7; }
+        .contact-form-side h3 { color: var(--dark-blue); font-size: 20px; margin-bottom: 25px; }
+        
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+        .form-group.full-width { grid-column: span 2; }
+        
+        .form-group label { font-size: 12px; font-weight: 600; color: var(--dark-blue); text-transform: uppercase; }
+        .form-group input, .form-group textarea { padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; background: #f8fafc; transition: 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--dark-blue); background: var(--white); outline: none; }
+        
+        .btn-submit { background: var(--dark-blue); color: var(--white); border: none; padding: 14px; border-radius: 6px; font-weight: 600; font-size: 14px; cursor: pointer; transition: 0.3s; width: 100%; }
+        .btn-submit:hover { background: var(--yellow); color: var(--dark-blue); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .contact-container { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full-width { grid-column: span 1; }
+        }
+
+        /* FOOTER */
+        footer { background-color: var(--dark-blue); color: var(--white); padding: 30px 5%; text-align: center; margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area"><img src="Logo.png" alt="BEES LOJİSTİK LOGO"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">ANASAYFA</a></li>
+                <li><a href="hakkimizda.html">HAKKIMIZDA</a></li>
+                <li><a href="hizmetlerimiz.html">HİZMETLERİMİZ</a></li>
+                <li><a href="neden-bees.html">NEDEN BEES?</a></li>
+                <li><a href="#">REFERANSLAR</a></li>
+                <li><a href="iletisim.html" class="active">İLETİŞİM</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="teklif-btn"><i class="fa-regular fa-file-lines"></i> TEKLİF AL</a>
+    </header>
+
+    <section class="page-header">
+        <h1>İletişim</h1>
+    </section>
+
+    <div class="contact-container">
+        
+        <div class="contact-info-side">
+            <h2>Bizimle İletişime Geçin</h2>
+            <p>Taşımacılık, lojistik ve dış ticaret ihtiyaçlarınız için her zaman buradayız. Operasyon ekibimiz sorularınızı yanıtlamaktan memnuniyet duyacaktır.</p>
+            
+            <div class="contact-methods">
+                <div class="method-box">
+                    <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="method-details">
+                        <h3>Telefon Numarası</h3>
+                        <p>0541 502 10 26</p>
+                    </div>
+                </div>
+                
+                <div class="method-box">
+                    <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="method-details">
+                        <h3>E-Posta Adresi</h3>
+                        <p>info@beeslojistik.com.tr</p>
+                    </div>
+                </div>
+                
+                <div class="method-box">
+                    <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="method-details">
+                        <h3>Merkez Ofis</h3>
+                        <p>Atatürk Mahallesi, Lojistik Caddesi No:12<br> Ümraniye / İstanbul</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-side">
+            <h3>Hızlı Mesaj & Teklif Formu</h3>
+            <form action="#">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Adınız Soyadınız</label>
+                        <input type="text" id="name" required placeholder="Örn: Ahmet Yılmaz">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Firma Adı</label>
+                        <input type="text" id="company" placeholder="Örn: ABC Dış Ticaret">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Posta</label>
+                        <input type="email" id="email" required placeholder="name@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" required placeholder="05xx xxx xx xx">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Mesajınız / Yük Detayları</label>
+                        <textarea id="message" rows="5" required placeholder="Lütfen talebinizi veya yükünüzün detaylarını (Ağırlık, ölçü, rota vb.) buraya yazın."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit">Mesajı Gönder</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <div>&copy; 2026 BEES LOJİSTİK. Tüm hakları saklıdır.</div>
+    </footer>
+
+</body>
+</html>
