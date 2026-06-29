@@ -1,106 +1,740 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BEES LOJİSTİK</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEES Lojistik | Uluslararası Nakliyat, Turizm ve Dış Ticaret Çözümleri</title>
+    <!-- Google Fonts - Inter & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons (Sosyal Medya ve İkonlar İçin) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- GENEL TASARIM VE RENKLER --- */
+        :root {
+            --dark-blue: #030e1e;
+            --mid-blue: #0a192f;
+            --light-blue: #172a45;
+            --yellow: #f5b700;
+            --text-dark: #333333;
+            --text-muted: #64748b;
+            --white: #ffffff;
+        }
 
-<header>
-<header>
-    <img src="Logo.png" class="logo" alt="BEES LOJİSTİK">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-    <h1>Uluslararası Taşımacılıkta Güvenilir Çözüm Ortağınız</h1>
+        body {
+            background-color: #f8fafc;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
 
-    <p>
-        Türkiye ile Avrupa arasında Karayolu Taşımacılığı,
-        Parsiyel & Komple Taşımacılık ve Dış Ticaret
-        Danışmanlığı hizmetleri sunuyoruz.
-    </p>
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    <a class="btn" href="tel:05415021026">
-        📞 Hemen Ara
+        ul {
+            list-style: none;
+        }
+
+        /* --- UP-BAR & HEADER (NAVIGASYON) --- */
+        header {
+            background-color: var(--dark-blue);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-placeholder {
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo-placeholder span {
+            color: var(--yellow);
+        }
+
+        .logo-subtext {
+            color: var(--yellow);
+            font-size: 10px;
+            display: block;
+            letter-spacing: 4px;
+            margin-top: -4px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--yellow);
+        }
+
+        .teklif-btn {
+            background-color: var(--yellow);
+            color: var(--dark-blue);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+
+        .teklif-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(to right, var(--dark-blue) 45%, rgba(3, 14, 30, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            padding: 100px 5% 180px 5%;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-call {
+            background-color: var(--yellow);
+            color: var(--dark-blue);
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .phone-text {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* --- HAKKIMIZDA BÖLÜMÜ (YÜZEN KART) --- */
+        .about-overlay {
+            margin-top: -100px;
+            padding: 0 5%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .about-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .about-left .tag {
+            color: var(--yellow);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .about-left h2 {
+            font-size: 26px;
+            color: var(--dark-blue);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+
+        .about-left p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-more {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-feature {
+            border-left: 1px solid #e2e8f0;
+            padding-left: 25px;
+        }
+
+        .about-feature .icon-box {
+            font-size: 28px;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .about-feature h3 {
+            font-size: 18px;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+
+        .about-feature p {
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* --- HİZMETLERİMİZ BÖLÜMÜ --- */
+        .services-section {
+            padding: 60px 5%;
+        }
+
+        .services-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .services-title .tag {
+            color: var(--yellow);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .services-title h2 {
+            font-size: 28px;
+            color: var(--dark-blue);
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .btn-all-services {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .service-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 25px;
+            border: 1px solid #edf2f7;
+            display: flex;
+            gap: 15px;
+            transition: all 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .service-icon {
+            font-size: 32px;
+            color: var(--yellow);
+            margin-top: 5px;
+        }
+
+        .service-info h3 {
+            font-size: 16px;
+            color: var(--dark-blue);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .service-info p {
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* --- SAYAÇLAR BÖLÜMÜ (COUNTER) --- */
+        .stats-bar {
+            background-color: var(--dark-blue);
+            padding: 40px 5%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: var(--white);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .stat-icon {
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--yellow);
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 60px 5% 20px 5%;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1.2fr 1.2fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+            line-height: 1.6;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            width: 32px;
+            height: 32px;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--yellow);
+            color: var(--dark-blue);
+        }
+
+        .footer-col h4 {
+            font-size: 14px;
+            color: var(--white);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links li a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        .footer-links li a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+        }
+
+        .footer-contact i {
+            color: var(--yellow);
+            margin-top: 3px;
+        }
+
+        .map-placeholder img {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-bottom-links a {
+            margin-left: 15px;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--white);
+        }
+
+        /* --- WHATSAPP BUTONU --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        /* --- RESPONSIVE TASARIM --- */
+        @media (max-width: 992px) {
+            .about-card {
+                grid-template-columns: 1fr;
+            }
+            .about-feature {
+                border-left: none;
+                border-top: 1px solid #e2e8f0;
+                padding-left: 0;
+                padding-top: 20px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- WHATSAPP BUTONU -->
+    <a href="https://wa.me/905415021026" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <a class="btn" href="https://wa.me/905415021026" target="_blank">
-        💬 WhatsApp
-    </a>
-</header>
-    <section>
+    <!-- HEADER / MENU AREA -->
+    <header>
+        <div class="logo-area">
+            <div>
+                <div class="logo-placeholder">BEES <span>LOJİSTİK</span></div>
+                <div class="logo-subtext">NAKLİYAT & TURİZM</div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">ANASAYFA</a></li>
+                <li><a href="#">HAKKIMIZDA</a></li>
+                <li><a href="#">HİZMETLERİMİZ</a></li>
+                <li><a href="#">NEDEN BEES LOJİSTİK?</a></li>
+                <li><a href="#">REFERANSLAR</a></li>
+                <li><a href="#">İLETİŞİM</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="teklif-btn">
+            <i class="fa-regular fa-file-lines"></i> TEKLİF AL
+        </a>
+    </header>
 
-<h2>Hakkımızda</h2>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>BEES Uluslararası Nakliyat,<br>Turizm ve Dış Ticaret Çözümleri</h1>
+            <p>Türkiye ve Avrupa arasında uluslararası karayolu taşımacılığı, parsiyel ve komple yük organizasyonları ile dış ticaret danışmanlığı hizmetleri sunuyoruz.</p>
+            <div class="hero-buttons">
+                <a href="tel:05415021026" class="btn-call">
+                    <i class="fa-solid fa-phone"></i> Hemen Ara
+                </a>
+                <span class="phone-text">0541 502 10 26</span>
+            </div>
+        </div>
+    </section>
 
-<p>
+    <!-- HAKKIMIZDA OVERLAY CARD -->
+    <section class="about-overlay">
+        <div class="about-card">
+            <div class="about-left">
+                <span class="tag">Hakkımızda</span>
+                <h2>Güvenilir, Hızlı ve Profesyonel Çözümler</h2>
+                <p>BEES LOJİSTİK olarak müşterilerimizin ihtiyaçlarına özel, güvenilir ve ekonomik lojistik çözümler üretiyoruz. Modern filomuz, deneyimli ekibimiz ve güçlü iş ortaklarımız ile yüklerinizi güvenle hedefe ulaştırıyoruz.</p>
+                <a href="#" class="btn-more">Daha Fazlası <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="about-feature">
+                <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Güvenilir Hizmet</h3>
+                <p>Yükleriniz emin ellerde. Zamanında ve güvenli teslimat garantisi.</p>
+            </div>
+            <div class="about-feature">
+                <div class="icon-box"><i class="fa-regular fa-clock"></i></div>
+                <h3>Zamanında Teslimat</h3>
+                <p>Planlı ve hızlı taşımacılık çözümleri ile işinizi aksatmıyoruz.</p>
+            </div>
+        </div>
+    </section>
 
-BEES LOJİSTİK, Türkiye ile Avrupa arasında uluslararası karayolu taşımacılığı alanında güvenilir ve profesyonel çözümler sunmaktadır.
+    <!-- HİZMETLERİMİZ SECTION -->
+    <section class="services-section">
+        <div class="services-header">
+            <div class="services-title">
+                <span class="tag">HİZMETLERİMİZ</span>
+                <h2>Lojistik Çözümlerimiz</h2>
+            </div>
+            <a href="#" class="btn-all-services">Tüm Hizmetler <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
 
-Komple ve parsiyel taşımacılık hizmetlerimizin yanında dış ticaret danışmanlığı ile müşterilerimizin tüm lojistik süreçlerini tek noktadan yönetiyoruz.
+        <div class="services-grid">
+            <!-- 1 -->
+            <div class="service-item">
+                <div class="service-icon"><i class="fa-solid fa-truck"></i></div>
+                <div class="service-info">
+                    <h3>Uluslararası Karayolu Taşımacılığı</h3>
+                    <p>Türkiye ve Avrupa arasında komple ve parsiyel yük taşımacılığı hizmetleri.</p>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="service-item">
+                <div class="service-icon"><i class="fa-solid fa-cubes"></i></div>
+                <div class="service-info">
+                    <h3>Parsiyel (LTL) Taşımacılık</h3>
+                    <p>Ekonomik parsiyel taşımacılık çözümleri ile yüklerinizi güvenle ulaştırıyoruz.</p>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="service-item">
+                <div class="service-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                <div class="service-info">
+                    <h3>Komple (FTL) Taşımacılık</h3>
+                    <p>Tam yük taşımacılığı ile hızlı ve direkt çözümler sunuyoruz.</p>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="service-item">
+                <div class="service-icon"><i class="fa-solid fa-passport"></i></div>
+                <div class="service-info">
+                    <h3>Dış Ticaret Danışmanlığı</h3>
+                    <p>İhracat ve ithalat süreçlerinizde profesyonel danışmanlık hizmetleri.</p>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="service-item">
+                <div class="service-icon"><i class="fa-solid fa-bus"></i></div>
+                <div class="service-info">
+                    <h3>Turizm Hizmetleri</h3>
+                    <p>Konforlu ve güvenilir turizm taşımacılığı çözümleri sunuyoruz.</p>
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="service-item">
+                <div class="service-icon"><i class="fa-solid fa-warehouse"></i></div>
+                <div class="service-info">
+                    <h3>Depolama & Lojistik</h3>
+                    <p>Modern depolama alanlarımız ile yüklerinizi güvenle saklıyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-Hızlı iletişim, zamanında teslimat ve müşteri memnuniyeti en büyük önceliğimizdir.
+    <!-- SAYILARLA BİZ (COUNTER) BAR -->
+    <section class="stats-bar">
+        <div class="stat-box">
+            <div class="stat-icon"><i class="fa-solid fa-truck-moving"></i></div>
+            <div>
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Yıllık Deneyim</div>
+            </div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+            <div>
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Mutlu Müşteri</div>
+            </div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-icon"><i class="fa-solid fa-earth-americas"></i></div>
+            <div>
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Ülkeye Taşımacılık</div>
+            </div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-icon"><i class="fa-solid fa-box-open"></i></div>
+            <div>
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Tamamlanan Taşıma</div>
+            </div>
+        </div>
+    </section>
 
-</p>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-about">
+                <div class="logo-placeholder">BEES <span>LOJİSTİK</span></div>
+                <p>Uluslararası Nakliyat, Turizm ve Dış Ticaret Çözümleri</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>HIZLI LİNKLER</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Anasayfa</a></li>
+                    <li><a href="#">Hakkımızda</a></li>
+                    <li><a href="#">Hizmetlerimiz</a></li>
+                    <li><a href="#">Neden BEES Lojistik?</a></li>
+                    <li><a href="#">Referanslar</a></li>
+                    <li><a href="#">İletişim</a></li>
+                </ul>
+            </div>
 
-</section>
+            <div class="footer-col">
+                <h4>HİZMETLERİMİZ</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Uluslararası Karayolu Taşımacılığı</a></li>
+                    <li><a href="#">Parsiyel (LTL) Taşımacılık</a></li>
+                    <li><a href="#">Komple (FTL) Taşımacılık</a></li>
+                    <li><a href="#">Dış Ticaret Danışmanlığı</a></li>
+                    <li><a href="#">Turizm Hizmetleri</a></li>
+                    <li><a href="#">Depolama & Lojistik</a></li>
+                </ul>
+            </div>
 
-<section>
+            <div class="footer-col">
+                <h4>İLETİŞİM</h4>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-phone"></i> 0541 502 10 26</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@beeslojistik.com.tr</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Atatürk Mah. Lojistik Cad. No:12<br>34500 Esenyurt / İstanbul</li>
+                    <li><i class="fa-regular fa-clock"></i> Pzt - Cum: 08:30 - 18:30</li>
+                </ul>
+                <div class="map-placeholder">
+                    <!-- Görseldeki statik harita görünümü simülasyonu -->
+                    <img src="https://maps.googleapis.com/maps/api/staticmap?center=Esenyurt,Istanbul&zoom=13&size=300x120&sensor=false&markers=color:red%7CEsenyurt,Istanbul" alt="Harita">
+                </div>
+            </div>
+        </div>
 
-<h2>Hizmetlerimiz</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Uluslararası Nakliye</h3>
-<p>Türkiye ve Avrupa arasında güvenilir taşımacılık çözümleri.</p>
-</div>
-
-<div class="card">
-<h3>Parsiyel & Komple</h3>
-<p>Yükünüze uygun ekonomik ve hızlı organizasyonlar.</p>
-</div>
-
-<div class="card">
-<h3>Dış Ticaret</h3>
-<p>İthalat ve ihracat süreçlerinde profesyonel destek.</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2>Hakkımızda</h2>
-
-<p>
-Bees Uluslararası Nakliyat Turizm ve Dış Ticaret Ltd. Şti.
-olarak müşterilerimize lojistik ve dış ticaret alanlarında
-güvenilir ve sürdürülebilir çözümler sunuyoruz.
-</p>
-
-</section>
-
-<section>
-
-<h2>İletişim</h2>
-
-<p><b>Telefon:</b> 0541 502 10 26</p>
-
-<p><b>E-Posta:</b> info@beeslojistik.com.tr</p>
-
-<p><b>Adres:</b> İstiklal Mah. Kuzey Sok. No:29 D:1 Ümraniye / İstanbul</p>
-
-</section>
-
-<footer>
-
-© 2026 BEES LOJİSTİK
-
-</footer>
-
-<a class="whatsapp"
-href="https://wa.me/905415021026"
-target="_blank">
-WhatsApp
-</a>
+        <div class="footer-bottom">
+            <div>&copy; 2026 BEES LOJİSTİK. Tüm hakları saklıdır.</div>
+            <div class="footer-bottom-links">
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Şartları</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
