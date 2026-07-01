@@ -140,7 +140,8 @@
 
         <div class="contact-form-side">
             <h3>Hızlı Mesaj & Teklif Formu</h3>
-            <form action="#">
+          <form id="teklifFormu">
+          </form>
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="name">Adınız Soyadınız</label>
@@ -163,7 +164,7 @@
                         <textarea id="message" rows="5" required placeholder="Lütfen talebinizi veya yükünüzün detaylarını (Ağırlık, ölçü, rota vb.) buraya yazın."></textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn-submit">Mesajı Gönder</button>
+                <button type="button" class="btn-submit" onclick="whatsappGonder()">Mesajı Gönder</button>
             </form>
         </div>
 
@@ -173,5 +174,31 @@
         <div>&copy; 2026 BEES LOJİSTİK. Tüm hakları saklıdır.</div>
     </footer>
 
-</body>
+</body >
+<script>
+function whatsappGonder() {
+    var isim = document.getElementById("name").value;
+    var firma = document.getElementById("company").value;
+    var email = document.getElementById("email").value;
+    var telefon = document.getElementById("phone").value;
+    var mesaj = document.getElementById("message") ? document.getElementById("message").value : "";
+
+    if(!isim || !telefon){
+        alert("Lütfen Adınız Soyadınız ve Telefon alanlarını doldurun.");
+        return;
+    }
+
+    var metin = "Merhaba BEES Lojistik, yeni bir teklif talebim var:%0A%0A" +
+                "*Ad Soyad:* " + isim + "%0A" +
+                "*Firma Adı:* " + firma + "%0A" +
+                "*E-posta:* " + email + "%0A" +
+                "*Telefon:* " + telefon + "%0A" +
+                "*Yük / Mesaj Detayı:* " + mesaj;
+
+    var telefonNumaram = "905415021026";
+    var url = "https://wa.me/" + telefonNumaram + "?text=" + metin;
+
+    window.open(url, '_blank');
+}
+</script>
 </html>
